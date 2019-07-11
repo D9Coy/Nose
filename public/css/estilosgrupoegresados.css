@@ -1,0 +1,77 @@
+body {
+	background: white;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 2%;
+}
+
+.container {
+	margin-top: 7%;
+	position: relative;
+}
+
+.card {
+	margin-top: 10%;
+	display: flex;
+	flex: none;
+	width: 80%;
+}
+
+.card p {
+	text-align: center;
+}
+
+h5 {
+	margin-top: 10%;
+}
+
+#titulo {
+	margin-top: 3%;
+}
+
+h2 {
+	text-align: left;
+}
+
+#cardgrupo{
+	margin-top: 5%;
+	margin-left: 1%;
+	margin-right: 1%;
+	display: inline-block;
+	width: 30%;
+}
+
+#grupo {
+	margin-top: 5%;
+}
+
+#cardgrupo h3 {
+	text-align: center;
+}
+
+#col {
+	margin-top: 1%;
+}
+
+#persona {
+	display: block;
+  	width: 200px;
+    height: 200px;
+}
+
+
+#grupo {
+	display: block;
+  	width: 250px;
+    height: 250px;
+}
+
+#creargrupo {
+	margin-top: 1%;
+}
+
+button[type="button"] {
+	width: 24%;
+}

@@ -1,0 +1,75 @@
+body {
+	background: white;
+}
+
+.container {
+	margin-top: 7%;
+	position: relative;
+	margin-bottom: 2%;
+}
+
+.card {
+	margin-top: 10%;
+	display: flex;
+	flex: none;
+	width: 80%;
+}
+
+.card p {
+	text-align: center;
+}
+
+.card-horizontal {
+	margin-top: 2%;
+	display: inline-flex;
+	flex: none;
+	width: 90%;
+}
+
+.card-horizontal p {
+	text-align: justify;
+}
+
+h5 {
+	margin-top: 10%;
+}
+
+#titulo {
+	margin-top: 3%;
+}
+
+h2 {
+	text-align: left;
+}
+
+
+#grupo {
+	margin-top: 5%;
+}
+
+
+#col {
+	margin-top: 1%;
+}
+
+#imgpublicacion{
+	display: inline-block;
+  	width: 250px;
+    height: 250px;
+}
+
+#persona {
+	display: block;
+  	width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+.card-footer {
+	width: 30%;
+	background: white;
+}
+
+#Vernoticia {
+	margin-left: 20%;
+}

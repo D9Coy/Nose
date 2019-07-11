@@ -1,0 +1,30 @@
+body {
+	background: white;
+}
+
+.container {
+	margin-top: 7%;
+	position: relative;
+	margin-bottom: 2%;
+}
+
+.card-horizontal {
+	margin-top: 2%;
+	display: inline-flex;
+	flex: none;
+	width: 90%;
+}
+
+.card-horizontal p {
+	text-align: justify;
+}
+
+h4 {
+	margin-top: 5%;
+}
+
+#imgpublicacion{
+	display: inline-block;
+  	width: 300px;
+    height: 300px;
+}
