@@ -4,38 +4,38 @@
 	<meta charset="UTF-8">
 	<title>Editar Master</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  	<link rel="stylesheet" href="/css/estiloseditmaster.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/css/estiloseditmaster.css">
 </head>
 <body>
 	<section id="EditarPerfilMaster">
 		<p id="tituloEditarPerfilMaster">Editar Perfil Máster</p>
-		<form action="/editarMaster" class="dentroEditarPerfilMaster">
+		<form method="post" class="dentroEditarPerfilMaster">
 			<div class="center">
-			<img src="/img/neutralidad.png" class="Imgperfil">
-			<button type="submit" value="Cambiar" id="cambiarImagen">Cambiar Imagen de Perfil</button>
+				<img src="/img/neutralidad.png" class="Imgperfil">
+				<button type="submit" value="Cambiar" id="cambiarImagen">Cambiar Imagen de Perfil</button>
 			</div>
 			<div class="cod">
-			<label class="labels">Codigo:</label>
-			<input type="text" id="Codigo" name="Codigo" >
+				<label class="labels">Codigo:</label>
+				<input type="text" id="Codigo" value="<%= datos.id %>">
 			</div>
 			<div class="nom">
-			<label class="labels">Nombre(s):</label>
-			<input type="text" id="Nombre" name="Nombre" >
+				<label class="labels">Nombre(s):</label>
+				<input type="text" id="Nombre" name="nombre" value="<%= datos.nombre %>">
 			</div>
 			<div class="corre">
-			<label class="labels">Correo Institucional:</label>
-			<input type="mail" id="correoins" name="correoins" placeholder="admin_01@utp.edu.co" >
+				<label class="labels">Correo Institucional:</label>
+				<input type="mail" id="correoins" name="correo" placeholder="admin_01@utp.edu.co" value="<%= datos.correo %>">
 			</div>
 			<div class="tel">
-			<label class="labels">Telefono:</label>
+				<label class="labels">Telefono:</label>
 			</div>
-			<input type="text" id="Telefono" name="Telefono" >
-			</div>
-			<div class="Carrera">
+			<input type="text" id="Telefono" name="telefono"  value="<%= datos.telefono %>">
+		</div>
+		<!-- <div class="Carrera">
 			<label class="labels">Carrera:</label>
 			<select class="custom-select" id="Carreras">
 				<option selected>Seleccionar Carrera</option>
@@ -79,27 +79,27 @@
 				<option value="38">Tecnología en Producción Hortícola</option>
 				<option value="23">Ingeniería de Sistemas y Computación</option>
 				<option value="24">Tecnología en Desarrollo del Software</option>
-				<option value="25">Administración Industrial</option><!-- Carrera de la que es egresado -->
+				<option value="25">Administración Industrial</option><!-- Carrera de la que es egresado
 			</select>
-			</div>
-			<div class="ciud">
+		</div> 
+		<div class="ciud">
 			<label class="labels">Ciudad:</label>
-			<input type="text" id="Ciudad" name="Ciudad" >
-			</div>
-			<div class="dir">
+			<input type="text" id="Ciudad" name="ciudad" value="<%= datos.ciudad %>">
+		</div> -->
+		<div class="dir">
 			<label class="labels">Dirección:</label>
-			<input type="text" id="Dirección" name="Dirección" >
-			</div>
-			<ul class="nav2">
-				<li><input type="submit" value="Guardar Cambios" id="formmaster" onclick="return validarFormulariomaster()"></li>
-				<li><a href="index.html" id="cancelar">Cancelar</a></li>
-			</ul>
-		</form>
-	</section>
-	<!----------------Scripts------------------>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="/js/popper.min.js"></script>
-  	<script src="/js/funcioneseditarmaster.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+			<input type="text" id="Dirección" name="direccion" value="<%= datos.direccion %>">
+		</div>
+		<ul class="nav2">
+			<li><input type="submit" value="Guardar Cambios" id="formmaster" onclick="return validarFormulariomaster()"></li>
+			<li><a href="/suadmin" id="cancelar">Cancelar</a></li>
+		</ul>
+	</form>
+</section>
+<!----------------Scripts------------------>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/funcioneseditarmaster.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 </body>
 </html>
