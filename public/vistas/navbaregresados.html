@@ -61,7 +61,15 @@
 	<div class="tab-content" id="content">
 		<div class="tab-pane fade show active " id="Noticias" role="tabpanel">
 			<div class="iframe-container">
-					<iframe width="1425" height="559" src="/vistas/noticiasegresados.html"></iframe>
+				<% if (!datos.autenticado) { %>
+
+				<iframe width="1425" height="559" src="/vistas/noautorizado.html"></iframe>
+
+				<% } else { %>
+
+				<iframe width="1425" height="559" src="/vistas/noticiasegresados.html"></iframe>
+
+				<% } %>
 			</div>
 		</div>
 		<div class="tab-pane fade" id="Grupos" role="tabpanel">

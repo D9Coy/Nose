@@ -9,6 +9,8 @@ const authCtrl = require('../middleware/auth')
 router.get('/suadmin', authCtrl.isAuth, principalCtrl.suAdmin)
 router.get('/editar/suadmin', authCtrl.isAuth, principalCtrl.editarSuAdmin)
 router.post('/editar/suadmin', authCtrl.isAuth, principalCtrl.guardarSuAdmin)
+router.get('/autorizar/egresados', authCtrl.isAuth, principalCtrl.autorizarEgresadosLista)
+router.get('/autorizar/egresado/:id', authCtrl.isAuth, principalCtrl.autorizarEgresado)
 
 router.get('/admin', authCtrl.isAuth, principalCtrl.admin)
 router.get('/crear/admin', authCtrl.isAuth, principalCtrl.crearAdmin)

@@ -5,7 +5,7 @@ const { db } = require('../services/db.js')
 
 const suAdmin = (req, res) => res.render('navbarmaster')
 const admin = (req, res) => res.render('navbaradministradores')
-const egresado = (req, res) => res.render('navbaregresados')
+const egresado = (req, res) => res.render('navbaregresados', { datos: req.session.usuario })
 
 const editarEgresado = (req, res) => res.render('editaregresado', { datos: req.session.usuario })
 const guardarEgresado = (req, res) => {
@@ -84,6 +84,40 @@ const guardarEdiccionAdmin = (req, res) => {
         })
 }
 
+const autorizarEgresadosLista = (req, res) => {
+    db.connect()
+        .then(async client => {
+            let query = {
+                text: `SELECT * FROM egresado WHERE autenticado = false`,
+                values: []
+            }
+            let respuesta = await client.query(query)
+            client.release()
+            res.render('tabla', { usuarios: respuesta.rows })
+        })
+        .catch((err) => {
+            console.log(err)
+            res.render('tabla', { usuarios: [] })
+        })
+}
+
+const autorizarEgresado = (req, res) => {
+    db.connect()
+        .then(async client => {
+            let  query = {
+                text: `UPDATE egresado SET autenticado = true
+                    WHERE id = $1`,
+                values: [req.params.id]
+            }
+            let respuesta = await client.query(query)
+            client.release()
+            res.redirect('/autorizar/egresados')
+        })
+        .catch(() => {
+            res.redirect('/autorizar/egresados')
+        })
+}
+
 module.exports = {
     suAdmin,
     admin,
@@ -95,5 +129,7 @@ module.exports = {
     crearAdmin,
     guardarAdmin,
     editarAdmin,
-    guardarEdiccionAdmin
+    guardarEdiccionAdmin,
+    autorizarEgresadosLista,
+    autorizarEgresado
 }
